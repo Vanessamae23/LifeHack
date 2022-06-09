@@ -7,6 +7,6 @@ import Item from './item.png'
 import Bottle from './bottle.png'
 import Tick from './tick.png'
 import Cross from './cross.png'
+import Nothing from './nothing.png'
 
-
-export { Logo, Tick, Bottle, HomePage, Profile, BMT, Helping, Item, Cross }
+export { Logo, Nothing, Tick, Bottle, HomePage, Profile, BMT, Helping, Item, Cross }

@@ -9,6 +9,7 @@ import Chatting from "./Chatting";
 import Items from "./Items";
 import Calendar from "./Calendar";
 import ForgotPassword from "./ForgotPassword";
+import Guidelines from "./Guidelines";
 
 
-export { SplashScreen, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }
+export { SplashScreen, Guidelines, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }

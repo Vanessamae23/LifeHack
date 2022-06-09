@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {SplashScreen, Login, Home, ForgotPassword, Register,  Items, Calendar,  Biodata, Chatting, EnlistDate, ChooseMentor } from '../pages';
+import {SplashScreen, Login, Home, ForgotPassword, Guidelines, Register,  Items, Calendar,  Biodata, Chatting, EnlistDate, ChooseMentor } from '../pages';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -16,7 +16,7 @@ const MainApp = () => {
       <Tab.Screen name="Home" component={Home}/>
       <Tab.Screen name="Items"  component={Items}/>
       <Tab.Screen name="Calendar"  component={Calendar}/>
-      <Tab.Screen name="Review" component={Register} />
+      <Tab.Screen name="Guides" component={Guidelines} />
     </Tab.Navigator>
   )
 }

@@ -48,7 +48,7 @@ const Register = ({navigation}) => {
           .ref('users/' + user.uid + '/')
           .set(data);
         storeData('user', data);
-        navigation.navigate('Home')
+        navigation.navigate('MainApp')
         setForm('reset');
 
       })

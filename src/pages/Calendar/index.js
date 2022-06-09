@@ -4,6 +4,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import { ICSergeant } from '../../assets';
+import { Nothing } from '../../assets';
 
 const timeToString = (time) => {
   const date = new Date(time);
@@ -31,7 +32,9 @@ const Calendar  = () => {
 
   const renderEmptyData = () => {
       return (
+        <View>
           <Text style={{textAlign: 'center', margin: 20, fontSize: 20, fontWeight: '600', color: 'green'}}>Nothing found on this date</Text>
+          </View>
       )
   }
 
