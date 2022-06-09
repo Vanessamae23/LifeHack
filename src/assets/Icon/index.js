@@ -12,5 +12,7 @@ import IconBackDark from './back-svgrepo-com.svg';
 import ICTent from './tent.svg'
 import ICItem from './item.svg'
 import ICCalendar from './calendar.svg'
+import ICArrow from './arrowRight.svg'
+import ICBook from './book.svg'
 
-export { Back, ICCalendar, ICTent, Icon, ICItem, ICBuddies, ICSergeant, ICCounsellor, IconNext, IconDropdown, IconBackDark, IconSendDark, IconSendLight, IconBackLight }
+export { Back, ICBook, ICCalendar, ICArrow, ICTent, Icon, ICItem, ICBuddies, ICSergeant, ICCounsellor, IconNext, IconDropdown, IconBackDark, IconSendDark, IconSendLight, IconBackLight }

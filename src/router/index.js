@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {SplashScreen, Login, Home, ForgotPassword, Guidelines, Register,  Items, Calendar,  Biodata, Chatting, EnlistDate, ChooseMentor } from '../pages';
+import {SplashScreen, Login, Vocation, Home, ForgotPassword, Guidelines, Register,  Items, Calendar,  Biodata, Chatting, EnlistDate, ChooseMentor } from '../pages';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
@@ -24,7 +24,7 @@ const MainApp = () => {
 const Router = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
         options={{headerShown: false}}
@@ -48,7 +48,7 @@ const Router = () => {
         name="EnlistDate"
         component={EnlistDate}
         options={{headerShown: false}}
-      />
+      /> */}
       <Stack.Screen
         name="MainApp"
         component={MainApp}
@@ -72,6 +72,11 @@ const Router = () => {
       <Stack.Screen
         name="ForgotPassword"
         component={ForgotPassword}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Vocation"
+        component={Vocation}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

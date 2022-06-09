@@ -10,6 +10,8 @@ import Items from "./Items";
 import Calendar from "./Calendar";
 import ForgotPassword from "./ForgotPassword";
 import Guidelines from "./Guidelines";
+import Vocation from "./Vocation";
 
 
-export { SplashScreen, Guidelines, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }
+
+export { SplashScreen, Guidelines, Vocation, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }
