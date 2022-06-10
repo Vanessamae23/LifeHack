@@ -21,7 +21,7 @@ const HomeProfile = ({onPress, name}) => {
        {/* <Image source={profile.photo.uri !== undefined ? profile.photo : DummyUser} style={styles.avatar}/> */}
         <Image source={Profile}  style={styles.avatar} />
         <View>
-        <Text style={styles.name}>{profile.fullName}</Text>
+        <Text style={styles.name}>{profile ? profile.fullName : ""}</Text>
       <Text style={styles.work}>Click here to log out</Text>
         </View>
     </TouchableOpacity>
