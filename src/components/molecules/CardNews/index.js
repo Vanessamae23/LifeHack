@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { BMT } from '../../../assets'
 
-const CardNews = ({details, date, time, uri}) => {
+const CardNews = ({details, onPress, date, time, uri}) => {
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={styles.card}>
         <Image  source={{uri}} style={styles.image} />
         <View>
             <Text style={styles.title}>{details}</Text>
@@ -13,7 +13,7 @@ const CardNews = ({details, date, time, uri}) => {
             <Text style={styles.text}>{time}</Text>
         </View>
       
-    </View>
+    </TouchableOpacity>
   )
 }
 

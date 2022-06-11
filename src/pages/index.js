@@ -13,6 +13,9 @@ import Guidelines from "./Guidelines";
 import Vocation from "./Vocation";
 import Procedure from "./Procedure";
 
+import News from "./News";
 
 
-export { SplashScreen, Guidelines, Vocation, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar, Procedure }
+export { SplashScreen, Procedure, News, Guidelines, Vocation, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }
+
+

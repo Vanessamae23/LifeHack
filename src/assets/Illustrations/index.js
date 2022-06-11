@@ -8,5 +8,8 @@ import Bottle from './bottle.png'
 import Tick from './tick.png'
 import Cross from './cross.png'
 import Nothing from './nothing.png'
+import Clock from './clock.png'
+import Calendar from './calendar.png'
+import Notes from './notepad.png'
 
-export { Logo, Nothing, Tick, Bottle, HomePage, Profile, BMT, Helping, Item, Cross }
+export { Logo, Nothing, Clock, Calendar, Notes, Tick, Bottle, HomePage, Profile, BMT, Helping, Item, Cross }
