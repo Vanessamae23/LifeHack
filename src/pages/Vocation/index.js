@@ -19,7 +19,8 @@ const Vocation = ({navigation, route}) => {
           const data = infos[item].info
           const [expanded, setExpanded] = React.useState(false);
 
-  const handlePress = () => setExpanded(!expanded);
+  //const handlePress = () => setExpanded(!expanded);
+  const handlePress = () => navigation.navigate('Procedure', {detail, item});
           return (
               
               <View>

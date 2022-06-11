@@ -11,7 +11,7 @@ const ItemCard = ({ detail}) => {
     return (
       <TouchableOpacity activeOpacity={0.9} onPress={onPress} style={styles.card}>
         <Text style={styles.text}>{detail}</Text>
-          <Image style={styles.image} source={Tick} />
+        <Image style={styles.image} source={Tick} />
       </TouchableOpacity>
     )
   }
@@ -31,14 +31,15 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         borderWidth: 4,
         borderColor: "#0A4A3F",
-        height: 100,
+        minHeight: 100,
         marginBottom: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingLeft: 20,
         paddingRight: 25,
-        marginHorizontal: 20
+        marginHorizontal: 20,
+        paddingVertical: 10
     },
     image : {
         width: 60,
@@ -46,7 +47,8 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 20,
-      color: 'black'
+      color: 'black',
+      width: 220
     }
 
 })

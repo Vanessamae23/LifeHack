@@ -11,7 +11,8 @@ import Calendar from "./Calendar";
 import ForgotPassword from "./ForgotPassword";
 import Guidelines from "./Guidelines";
 import Vocation from "./Vocation";
+import Procedure from "./Procedure";
+import News from "./News";
 
 
-
-export { SplashScreen, Guidelines, Vocation, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }
+export { SplashScreen, Procedure, News, Guidelines, Vocation, ForgotPassword, Login, Register, Biodata, EnlistDate, Home, ChooseMentor, Chatting, Items, Calendar }
