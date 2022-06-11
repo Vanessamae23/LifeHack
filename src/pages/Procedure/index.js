@@ -15,7 +15,11 @@ const Procedure = ({navigation, route}) => {
     <View style={styles.page}>
         <Header title={item} subtitle={detail.vocation} onBack onPress={() => navigation.goBack()} />
         <Image source={{uri: detail.imageUri}} style={styles.image} />
+
         <ScrollView style={styles.view} >
+
+   
+
       <List.Section >
              {data.map((detail,index,arr) => {
                  return (
@@ -42,8 +46,11 @@ const styles = StyleSheet.create({
       image: {
           height: 200,
           width: '100%',
+
       },
       view: {
         marginTop: 10
       }
 })
+
+
