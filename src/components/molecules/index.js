@@ -9,5 +9,6 @@ import InputChat from "./InputChat";
 import CardNews from "./CardNews";
 import ItemCard from "./ItemCard";
 import GuideCards from "./GuideCards";
+import PackCard from "./PackCard";
 
-export { Header, BottomNavigator, GuideCards, ItemCard, HomeProfile, Category, Loading, List, ChatItem, InputChat, CardNews }
+export { Header, BottomNavigator, GuideCards, PackCard, ItemCard, HomeProfile, Category, Loading, List, ChatItem, InputChat, CardNews }
