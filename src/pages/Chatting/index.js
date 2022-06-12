@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import {Header, ChatItem, InputChat} from '../../components';
 import {colors,  getChatTime, setDateChat, showError} from '../../utils';
 import { getData } from '../../utils/localStorage';
-import {Profile} from '../../assets';
 import { Firebase } from '../../config'
 
 const Chatting = ({navigation, route}) => {
@@ -33,7 +32,8 @@ const Chatting = ({navigation, route}) => {
             data: newDataChat
           })
         });
-        setChatData(allDataChat)
+        
+        setChatData(allDataChat);
       }
     })
   }, [user.uid, mentorData.data.uid])
@@ -41,7 +41,7 @@ const Chatting = ({navigation, route}) => {
   const getDataUserFromLocal = () => {
     getData('user').then(res => {
       const data = res;
-      setUser(data)
+      setUser(data);
     })
   }
 
@@ -57,18 +57,6 @@ const Chatting = ({navigation, route}) => {
     }
     const chatID = `${user.uid}_${mentorData.data.uid}`
     const oppID = `${mentorData.data.uid}_${user.uid}`
-    const urlMessageUser = `messages/${user.uid}/${chatID}`
-    const urlMessageMentor = `messages/${mentorData.data.uid}/${chatID}`
-    const dataHistoryChatForUser = {
-      lastContentChat: chatContent,
-      lastChatDate: today.getTime(),
-      uidPartner: mentorData.data.uid
-  }
-  const dataHistoryChatForMentor = {
-    lastContentChat: chatContent,
-    lastChatDate: today.getTime(),
-    uidPartner: user.uid
-}
 Firebase.database().ref(`chatting/${oppID}/allChat/${setDateChat(today)}/`).push(data).then(res => {
  
 }).catch(err => {
@@ -76,14 +64,11 @@ Firebase.database().ref(`chatting/${oppID}/allChat/${setDateChat(today)}/`).push
 })
     Firebase.database().ref(`chatting/${chatID}/allChat/${setDateChat(today)}/`).push(data).then(res => {
       setChatContent('')
-      // set history for the user
-      Firebase.database().ref(urlMessageUser).set(dataHistoryChatForUser)
-      Firebase.database().ref(urlMessageMentor).set(dataHistoryChatForMentor)
     }).catch(err => {
       showError(err.message)
     })
     setChatContent('')
-    Keyboard.dismiss()
+    Keyboard.dismiss();
     
   }
   return (
@@ -105,8 +90,9 @@ Firebase.database().ref(`chatting/${oppID}/allChat/${setDateChat(today)}/`).push
               return (
                 <View>
                   <Text style={styles.chatDate}>{chat.id}</Text>
-                  {chat.data.map((itemChat, index) => {
-                    return <ChatItem key={index} text={itemChat.data.chatContent} date={itemChat.data.chatTime} isMe={itemChat.data.sendBy === user.uid ? true : false} />
+                  {chat.data.map((itemChat) => {
+                    
+                    return <ChatItem  text={itemChat.data.chatContent} date={itemChat.data.chatTime} isMe={itemChat.data.sendBy === user.uid ? true : false} />
                   })}
                 </View>
             )})

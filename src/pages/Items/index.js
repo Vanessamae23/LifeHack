@@ -1,13 +1,16 @@
 import { StyleSheet, Text, ScrollView, View, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Item } from '../../assets'
-import { ItemCard } from '../../components'
+import { PackCard } from '../../components'
 import Firebase from 'firebase'
 import { getData } from '../../utils/localStorage'
+import { ICArrow } from '../../assets'
+import { List, DefaultTheme } from 'react-native-paper'
 
 const Items = () => {
-  const [item, setItem] = useState([])
+  const [key, setKey] = useState([])
   const [user, setUser] = useState({});
+  const [pack, setPack] = useState([])
   const getDataUserFromLocal = () => {
     getData('user').then(res => {
       setUser(res);
@@ -18,7 +21,16 @@ const Items = () => {
     getDataUserFromLocal();
     Firebase.database().ref('list/').once('value').then(res => {
       if(res.val()) {
-        setItem(res.val())
+        setKey(res.val())
+        const data = [];
+        Object.keys(key).map((item) => {
+          const information = {
+            topic: item,
+            things: key[item].items
+          }
+          data.push(information)
+        })
+        setPack(data)
       }
     })
   }, [])
@@ -27,9 +39,31 @@ const Items = () => {
         <Image style={styles.image} source={Item} />
         <Text style={styles.text}>Item Pack List</Text>
         <ScrollView>
-        { item.map((list, index) => {
-              return <ItemCard  detail={list.item} key={index} />
-            })}
+         <List.Section >
+          
+          {pack.map((item, index) => {
+            const data = item["things"]
+              return (
+                  
+                  <View>
+                   <List.Accordion style={{borderColor:"#c4dbc2", backgroundColor: '#c4dbc2', borderBottomWidth: 2, color: 'white', fontWeight: '600'}} theme={{ colors: { primary: 'black', text: 'black' }}}  title={item["topic"]}
+                  right={props => <List.Icon {...props} icon={ICArrow} />}
+                  >
+                 {data.map(detail => {
+                     return (
+                            <List.Item style={{backgroundColor: 'white', marginBottom: -15}} title={props => <PackCard  detail={detail}  />} />
+            
+                        
+                     )
+                 })}
+                  </List.Accordion>  
+                  </View>
+                  
+                 
+              )
+          })}
+          
+          </List.Section>
         </ScrollView>
      
     </View>

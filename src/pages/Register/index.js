@@ -82,7 +82,7 @@ const Register = ({navigation}) => {
         <Gap height={16}/>
         <Input label="Email Address" value={form.email} onChangeText={value => setForm('email', value)} placeholder="Type your email address" />
         <Gap height={16}/>
-        <Input label="Password" value={form.password} onChangeText={value => setForm('password', value)} placeholder="Type your Password" />
+        <Input label="Password" value={form.password} onChangeText={value => setForm('password', value)} placeholder="Type your Password" secureTextEntry={true} />
         <Gap height={24}/>
         <Input onNumber={true} value={form.leave} onChangeText={value => setForm('leave', value)} label="Leave Lobangz" placeholder="Leave Days Left" />
         <Gap height={16}/>
