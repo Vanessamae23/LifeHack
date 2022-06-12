@@ -24,7 +24,7 @@ const Procedure = ({navigation, route}) => {
              {data.map((detail,index,arr) => {
                  return (
                     <View>
-                        <ItemCard  detail={detail} key={index} />
+                        <ItemCard  detail={detail} additionalInfo={infos[item].tips != null ? infos[item].tips[detail] : []} key={index} />
                     </View>
                     
                  )
