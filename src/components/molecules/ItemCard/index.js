@@ -25,9 +25,7 @@ const ItemCard = ({ detail , additionalInfo}) => {
                <Header title={detail} subtitle="More Information" onBack onPress={() => setModal(!modal)} />
                <ScrollView>
                  <Image source={{uri: "https://www.mindef.gov.sg/web/wcm/connect/army/da3c1b43-54d9-40a8-85f8-96a7bbf2b8f4/Supply.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_1QK41482L8HD90QOSSLBSG3000-da3c1b43-54d9-40a8-85f8-96a7bbf2b8f4-nPbh7pg"}} style={styles.imageFull} />
-                 {additionalInfo.map((tip) => (
-                      <List.Item style={{backgroundColor: '#c4dbc2', paddingLeft: 10}} title={tip} />
-                  ))}
+                 <Text style={{fontSize: 20,color: 'black',width: "100%", padding:10}}>{additionalInfo}</Text>
                 </ScrollView>
               </View>
               {/*</View>*/}
