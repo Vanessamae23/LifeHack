@@ -25,7 +25,8 @@ export default Header
 const styles = StyleSheet.create({
   title: {
     fontSize: 22,
-    color: 'black'
+    color: 'black',
+    fontWeight: '800'
   },
   subtitle: {
     fontSize: 14,

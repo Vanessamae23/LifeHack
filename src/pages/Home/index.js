@@ -61,7 +61,7 @@ const Home = ({navigation}) => {
           </Text>
           <View style={styles.newsContainer}>
           { news.map((item, index) => {
-              return <CardNews uri={item.uri} details={item.title} key={index} date={item.date} time={item.time} />
+              return <CardNews onPress={() => navigation.navigate('News', item)} uri={item.uri} details={item.title} key={index} date={item.date} time={item.time} />
             })}
           </View>
           

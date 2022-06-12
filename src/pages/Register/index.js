@@ -71,7 +71,7 @@ const Register = ({navigation}) => {
 
   return (
     <View style={styles.page}>
-        <Header onBack={() => {}} title="Register" subtitle="Make an Account and Order a Meal"/>
+        <Header onBack onPress={() => navigation.goBack()} title="Register" subtitle="Make an Account and Order a Meal"/>
         <ScrollView contentContainerStyle={{flexGrow: 1}} style={styles.container}>
           <View style={styles.photo}>
           <View style={styles.borderPhoto}>
