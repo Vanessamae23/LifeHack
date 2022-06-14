@@ -12,7 +12,7 @@ const Header = ({title, subtitle, onBack, onPress}) => {
         </View>
       </TouchableOpacity>
       }
-      <View>
+      <View style={styles.view}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>
@@ -44,5 +44,8 @@ const styles = StyleSheet.create({
     padding: 12,
     marginRight: 16,
     marginLeft: -16
+  },
+  view: {
+    maxWidth: '80%'
   }
 })

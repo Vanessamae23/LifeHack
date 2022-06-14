@@ -37,9 +37,10 @@ const styles = StyleSheet.create({
         width: 190,
         height: 150,
         shadowColor: 'black',
-        shadowOffset: {width: 0, height: 20},
-        shadowOpacity: 0.9,
-        elevation: 5
+        shadowOffset: {width: 0, height: 120},
+        shadowOpacity: 1,
+        elevation: 5,
+        shadowRadius: 5
     },
     illustration: {
         marginBottom: 20
@@ -50,7 +51,9 @@ const styles = StyleSheet.create({
     },
     categories: {
         fontSize: 16,
-        color: "black"
+        color: "black",
+        fontWeight: '600',
+        textShadowColor: 'black'
     }
 
 })

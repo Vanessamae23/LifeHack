@@ -10,5 +10,6 @@ import CardNews from "./CardNews";
 import ItemCard from "./ItemCard";
 import GuideCards from "./GuideCards";
 import PackCard from "./PackCard";
+import HomeCards from "./HomeCards";
 
-export { Header, BottomNavigator, GuideCards, PackCard, ItemCard, HomeProfile, Category, Loading, List, ChatItem, InputChat, CardNews }
+export { Header, BottomNavigator, HomeCards, GuideCards, PackCard, ItemCard, HomeProfile, Category, Loading, List, ChatItem, InputChat, CardNews }
