@@ -30,10 +30,10 @@ const Items = () => {
           }
           data.push(information)
         })
-        setPack(data)
+        setPack(data);
       }
     })
-  }, [])
+  }, [pack])
   return (
     <View style={styles.page}>
         <Image style={styles.image} source={Item} />
@@ -46,12 +46,12 @@ const Items = () => {
               return (
                   
                   <View>
-                   <List.Accordion style={{borderColor:"#c4dbc2", backgroundColor: '#c4dbc2', borderBottomWidth: 2, color: 'white', fontWeight: '600'}} theme={{ colors: { primary: 'black', text: 'black' }}}  title={item["topic"]}
+                   <List.Accordion key={index} style={{borderColor:"green", backgroundColor: '#c4dbc2', borderBottomWidth: 2, color: 'white', fontWeight: '600'}} theme={{ colors: { primary: 'black', text: 'black' }}}  title={item["topic"]}
                   right={props => <List.Icon {...props} icon={ICArrow} />}
                   >
-                 {data.map(detail => {
+                 {data.map((detail, index) => {
                      return (
-                            <List.Item style={{backgroundColor: 'white', marginBottom: -15}} title={props => <PackCard  detail={detail}  />} />
+                            <List.Item key={index} style={{backgroundColor: 'white', marginBottom: -15}} title={props => <PackCard  detail={detail}  />} />
             
                         
                      )

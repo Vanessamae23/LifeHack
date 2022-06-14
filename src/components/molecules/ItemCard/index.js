@@ -5,18 +5,19 @@ import { Alert, Modal, Pressable } from "react-native";
 import { Header } from '../../../components'
 import { DefaultTheme, List } from 'react-native-paper'
 
-const ItemCard = ({ detail , additionalInfo}) => {
+const ItemCard = ({ detail , additionalInfo, uri}) => {
   const [type, setType] = useState(false)
   const onPress = () => {
     setType(!type)
   }
   const [modal, setModal] = useState(false)
   const popUp = () => {
-    setModal(!modal);
+    setModal(!modal)
   }
   const imageSource = type == true ? Tick : Cross
+  
     return (
-    <View>
+    <View >
         <Modal animationType = {"slide"} transparent = {false} 
                visible = {modal}>
                {/*https://stackoverflow.com/questions/40703648/set-width-and-height-to-react-native-modal*/}
@@ -24,8 +25,8 @@ const ItemCard = ({ detail , additionalInfo}) => {
                <View style={{width: "100%", height: "100%", backgroundColor: '#ffffff'}}>
                <Header title={detail} subtitle="More Information" onBack onPress={() => setModal(!modal)} />
                <ScrollView>
-                 <Image source={{uri: "https://www.mindef.gov.sg/web/wcm/connect/army/da3c1b43-54d9-40a8-85f8-96a7bbf2b8f4/Supply.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_1QK41482L8HD90QOSSLBSG3000-da3c1b43-54d9-40a8-85f8-96a7bbf2b8f4-nPbh7pg"}} style={styles.imageFull} />
-                 <Text style={{fontSize: 20,color: 'black',width: "100%", padding:10}}>{additionalInfo}</Text>
+                 <Image source={{uri}} style={styles.imageFull} />
+                 <Text style={{fontSize: 20,color: 'black',width: "100%", padding:25}}>{additionalInfo}</Text>
                 </ScrollView>
               </View>
               {/*</View>*/}

@@ -22,9 +22,10 @@ const Procedure = ({navigation, route}) => {
 
       <List.Section >
              {data.map((detail,index,arr) => {
+              console.log(infos[item].image[detail])
                  return (
                     <View>
-                        <ItemCard  detail={detail} additionalInfo={infos[item].tips != null ? infos[item].tips[detail] : []} key={index} />
+                        <ItemCard  detail={detail} uri={infos[item].image[detail] != null ? infos[item].image[detail] : "https://www.mindef.gov.sg/web/wcm/connect/army/da3c1b43-54d9-40a8-85f8-96a7bbf2b8f4/Supply.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_1QK41482L8HD90QOSSLBSG3000-da3c1b43-54d9-40a8-85f8-96a7bbf2b8f4-nPbh7pg"} additionalInfo={infos[item].tips != null ? infos[item].tips[detail] : []} key={index} />
                     </View>
                     
                  )
