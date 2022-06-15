@@ -39,7 +39,7 @@ const Router = () => {
         name="Register"
         component={Register}
         options={{headerShown: false}}
-      />
+      /> 
       <Stack.Screen
         name="Biodata"
         component={Biodata}

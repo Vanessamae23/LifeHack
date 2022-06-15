@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React, {useState, useEffect} from 'react'
 import { HomeProfile } from '../../components'
-import { Category, Gap, CardNews } from '../../components'
+import { Category, Gap, CardNews, HomeCards } from '../../components'
 import { Firebase } from '../../config'
 
 const Home = ({navigation}) => {
-
+  const [information, setInformation] = useState([])
   const [ category, setCategory] = useState([])
   const [ mentor, setMentor ] = useState([])
   const [news, setNews] = useState([])
@@ -21,6 +21,24 @@ const Home = ({navigation}) => {
       if(res.val()) {
         setNews(res.val())
         console.log(news)
+      }
+    })
+
+    Firebase.database().ref('guides/').once('value').then(res => {
+      if(res.val()) {
+        const data = res.val();
+        const array = [];
+        data.map(item => {
+            Object.keys(item).map(key => {
+                const detail = {
+                    vocation: item[key].name,
+                    guideName: item[key].what,
+                    imageUri: item[key].image
+                }
+               array.push(detail)
+            })
+        })
+        setInformation(array)
       }
     })
 
@@ -43,10 +61,34 @@ const Home = ({navigation}) => {
     <ScrollView style={styles.page}>
         <HomeProfile onPress={Logout} />
         <Text style={styles.welcome}>
-        Who are you looking for today?
+        Vocation specific Guidance
       </Text>
         <View style={styles.wrapperScroll}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={styles.category}>
+            <Gap width={16} />
+            {
+          information.map((item, index) => {
+              return (
+                <HomeCards key={index} image={item.imageUri} name={item.vocation} onPress={() => navigation.navigate('Vocation', item)} />
+                
+              )
+              
+          })
+      }
+            <Gap width={6} />
+          </View>
+        </ScrollView>
+
+     
+      <View style={{marginLeft: 20}}>
+      <Text style={styles.welcome} >
+            Who are you looking for today?
+          </Text>
+      </View>
+        
+    
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={styles.category}>
             <Gap width={16} />
             { category.map(item => {
@@ -54,7 +96,9 @@ const Home = ({navigation}) => {
             })}
             <Gap width={6} />
           </View>
-        </ScrollView>
+        </ScrollView> 
+ 
+        
         <View style={styles.news}>
             <Text style={styles.welcome}>
             Announcements and News
@@ -95,7 +139,7 @@ const styles = StyleSheet.create({
         maxWidth: 300,
         fontWeight: "600",
         color: 'black',
-        fontWeight: '600'
+        fontWeight: '600',
       },
       news: {
         paddingHorizontal: 20

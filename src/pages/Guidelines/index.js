@@ -29,10 +29,10 @@ const Guidelines = ({navigation}) => {
       <Text style={styles.text}>Guidelines</Text>
       <ScrollView showsVerticalScrollIndicator={false}>
       {
-          information.map(item => {
+          information.map((item, index) => {
               return (
                 <View>
-                <GuideCards image={item.imageUri} name={item.vocation} onPress={() => navigation.navigate('Vocation', item)} />
+                <GuideCards key={index} image={item.imageUri} name={item.vocation} onPress={() => navigation.navigate('Vocation', item)} />
                 </View>
               )
               
