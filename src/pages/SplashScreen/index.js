@@ -14,8 +14,8 @@ const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image source={Logo} style={styles.image}/>
-      <Text style={styles.title}>NS Lobangz</Text>
-      <Text style={styles.subtitle} >Onesky Corporation</Text>
+      <Text style={styles.title}>Zero Waste</Text>
+      <Text style={styles.subtitle} >Lifehack</Text>
     </View>
   )
 }
@@ -24,8 +24,8 @@ export default SplashScreen
 
 const styles = StyleSheet.create({
     image: {
-        height: 300,
-        width: 300
+        height: 150,
+        width: 150
     },
     title: { 
         fontSize: 32,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         color: '#eeeeee'
     },
     container: {
-        backgroundColor: '#138014',
+        backgroundColor: '#f1c232',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'

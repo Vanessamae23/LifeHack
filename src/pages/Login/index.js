@@ -53,19 +53,20 @@ const Login = ({navigation}) => {
 
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}} style={styles.page}>
-      <Header title="Account Login" subtitle="Discover your NS Lobangz" />
-      <View style={{justifyContent: 'space-between', flex: 1, backgroundColor: 'green'}}>
+      <Header title="Account Login" subtitle="Let's reduce our waste today" />
+      <View style={{justifyContent: 'space-between', flex: 1}}>
       <View style={styles.container}>
+        <Gap height={16} />
         <Input label="Email Address"  value={form.email} onChangeText={value => setForm('email', value)} placeholder="Type your email address" />
         <Gap height={16} />
         <Input label="Password"  value={form.password} onChangeText={value => setForm('password', value)} placeholder="Type your Password" />
-        <Gap height={24} />
+        <Gap height={200} />
         <Button onPress={login} text="Login" />
         <Gap height={20} />
         <Button
           onPress={() => navigation.navigate('Register')}
           text="Create New Account"
-          color="#274e13"
+          color="#b45f06"
           textColor="white"
         />
         <Gap height={15} />
@@ -77,7 +78,6 @@ const Login = ({navigation}) => {
         />
         
       </View>
-      <Image style={styles.image} source={HomePage} />
       </View>
     </ScrollView>
   );

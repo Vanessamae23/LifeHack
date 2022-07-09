@@ -19,9 +19,6 @@ const Register = ({navigation}) => {
     fullName: '',
     email: '',
     password: '',
-    leave: 0,
-    off: 0,
-    bookout: 0,
   });
 
   
@@ -38,10 +35,6 @@ const Register = ({navigation}) => {
           fullName: form.fullName,
           email: form.email,
           uid: user.uid,
-          leave: form.leave,
-          off: form.off,
-          bookout: form.bookout,
-          roles: form.roles
         };
         // set is to keep the data
         Firebase.database()
@@ -83,31 +76,6 @@ const Register = ({navigation}) => {
         <Input label="Email Address" value={form.email} onChangeText={value => setForm('email', value)} placeholder="Type your email address" />
         <Gap height={16}/>
         <Input label="Password" value={form.password} onChangeText={value => setForm('password', value)} placeholder="Type your Password" />
-        <Gap height={24}/>
-        <Input onNumber={true} value={form.leave} onChangeText={value => setForm('leave', value)} label="Leave Lobangz" placeholder="Leave Days Left" />
-        <Gap height={16}/>
-        <Input onNumber={true} value={form.off} onChangeText={value => setForm('off', value)} label="Off Lobangz" placeholder="Off Days Left" />
-        <Gap height={16}/>
-        <Input onNumber={true} value={form.bookout} onChangeText={value => setForm('bookout', value)} label="Book Out Lobangz" placeholder="Book Out Days Left" />
-        <Gap height={16}/>
-        <SelectDropdown
-              buttonStyle={styles.select}
-              defaultButtonText="Role"
-              data={roles}
-              onSelect={(selectedItem, index) => {
-                setForm('roles', selectedItem);
-              }}
-              buttonTextAfterSelection={(selectedItem, index) => {
-                return selectedItem;
-              }}
-              rowTextForSelection={(item, index) => {
-                return item;
-              }}
-              renderDropdownIcon={() => {
-                return <IconDropdown />
-              }}
-              buttonTextStyle={styles.selectText}
-            />
         <Gap height={24}/>
         <Button onPress={onContinue} text="Continue" />
         <Gap height={100} />

@@ -4,13 +4,13 @@ import firebase from 'firebase'
 
 //setting it up
 firebase.initializeApp({
-  databaseURL: "https://onesky-2d3ad-default-rtdb.asia-southeast1.firebasedatabase.app/",
-  apiKey: "AIzaSyAwHkcobReGeMRf43ihVyZjQrn-s6G7f6g",
-  authDomain: "onesky-2d3ad.firebaseapp.com",
-  projectId: "onesky-2d3ad",
-  storageBucket: "onesky-2d3ad.appspot.com",
-  messagingSenderId: "1096544105580",
-  appId: "1:1096544105580:web:dbfbfbac11f7c226f05449"
+  apiKey: "AIzaSyDV65Ogt_a3lJ26y_-f_c09cJiYtF7wm4w",
+  authDomain: "lifehack-3592c.firebaseapp.com",
+  databaseURL: "https://lifehack-3592c-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "lifehack-3592c",
+  storageBucket: "lifehack-3592c.appspot.com",
+  messagingSenderId: "851792703547",
+  appId: "1:851792703547:web:ea7ebf32bd0d23f371ec1e"
 })
 
 // making a variable that we can use

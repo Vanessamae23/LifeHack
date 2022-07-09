@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     text: (active) => ({
         fontSize: 12,
-        color: active ? 'white' : '#bcbcbc',
+        color: active ? 'white' : 'black',
         marginTop: 4,
         fontWeight:'800'
     })

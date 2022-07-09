@@ -56,9 +56,10 @@ const BottomNavigator = ({state, descriptors, navigation}) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       paddingVertical: 10,
-      backgroundColor: "#274e13",
-      paddingHorizontal: 20,
-      borderTopLeftRadius: 25,
-      borderTopRightRadius: 25
+      backgroundColor: "#e1ac35",
+      paddingHorizontal: 40,
+      borderRadius: 30,
+      marginBottom: 15,
+      marginHorizontal: 10
     },
   });
